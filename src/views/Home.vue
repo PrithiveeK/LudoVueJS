@@ -1,18 +1,44 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div class="main noscroll">
+    <Dashboard class="home" />
+    <Stats class="stats" />
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import Dashboard from "@/components/Dashboard.vue";
+import Stats from "@/components/Stats.vue";
 
 @Options({
   components: {
-    HelloWorld
+    Dashboard,
+    Stats
   }
 })
 export default class Home extends Vue {}
 </script>
+
+<style>
+.main {
+  overflow: hidden auto;
+  width: inherit;
+  height: inherit;
+}
+.main > section {
+  width: inherit;
+  height: inherit;
+  padding-top: 3rem;
+  overflow: hidden;
+}
+.home {
+  position: relative;
+  display: grid;
+  justify-content: space-around;
+}
+img {
+  pointer-events: none;
+  width: 30rem;
+  max-width: 85vw;
+}
+</style>
